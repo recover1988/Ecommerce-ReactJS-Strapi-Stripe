@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
       state.cart = [...state.cart, action.payload.item];
     },
 
-    removerFromCart: (state, action) => {
+    removeFromCart: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
 
@@ -51,7 +51,7 @@ export const {
   addToCart,
   decreaseCount,
   increaseCount,
-  removerFromCart,
+  removeFromCart,
   setIsCartOpen,
 } = cartSlice.actions;
 
