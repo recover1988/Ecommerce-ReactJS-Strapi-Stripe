@@ -24,6 +24,7 @@ const MainCarousel = () => {
       showThumbs={false}
       showIndicators={false}
       showStatus={false}
+      // este metodo es para obtener la flecha de prev
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
           onClick={onClickHandler}
@@ -39,6 +40,7 @@ const MainCarousel = () => {
           <NavigateBeforeIcon sx={{ fontSize: 40 }} />
         </IconButton>
       )}
+      // este metodo es para obtener la flecha de next
       renderArrowNext={(onClickHandler, hasNext, label) => (
         <IconButton
           onClick={onClickHandler}
@@ -81,7 +83,7 @@ const MainCarousel = () => {
             maxWidth={isNonMobile ? undefined : "240px"}
           >
             <Typography color={shades.secondary[200]}>-- NEW ITEMS</Typography>
-            <Typography variant="h1">Summer Sale</Typography>
+            <Typography variant="h1">Zarha Store</Typography>
             <Typography
               fontWeight="bold"
               color={shades.secondary[300]}
