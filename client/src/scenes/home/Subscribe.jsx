@@ -10,9 +10,9 @@ const Subscribe = () => {
       <IconButton>
         <MarkEmailReadOutlinedIcon fontSize="large" />
       </IconButton>
-      <Typography variant="h3">Subscribe To Our Newsletter</Typography>
+      <Typography variant="h3">Suscribete a nuestro Newsletter</Typography>
       <Typography>
-        and receive $20 coupon for your first order when you checkout
+        y recibe un cupon de $20 es descuento en tu primera orden. 
       </Typography>
       <Box
         p="2px 4px"
@@ -30,7 +30,7 @@ const Subscribe = () => {
         />
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         <Typography sx={{ p: "10px", ":hover": { cursor: "pointer" } }}>
-          Subscribe
+          Suscribete
         </Typography>
       </Box>
     </Box>
