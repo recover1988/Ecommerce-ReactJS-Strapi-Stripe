@@ -89,7 +89,7 @@ const MainCarousel = () => {
               color={shades.secondary[300]}
               sx={{ textDecoration: "underline" }}
             >
-              Discover More
+              Descubre mas
             </Typography>
           </Box>
         </Box>
