@@ -8,9 +8,7 @@ import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe(
-  "pk_test_51MXVmCJlOMzO5ZsB6bWMZQTbtGxMqSnHvbEuVThr4xhLLOZ9neqdY7bnjdndjzU91pe5XVGeLjp0hmc2P8mz9u8y00zm1VpWme"
-);
+const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -47,7 +45,7 @@ const Checkout = () => {
       })),
     };
 
-    const response = await fetch("http://localhost:1337/api/orders", {
+    const response = await fetch(process.env.API_URL_STRAPI + "/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
