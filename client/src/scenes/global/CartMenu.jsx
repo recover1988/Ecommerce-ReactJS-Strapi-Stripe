@@ -26,10 +26,10 @@ const CartMenu = () => {
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
   const totalPrice = cart.reduce((total, item) => {
-    return total + item.count * item.attibutes.price;
+    return total + item.count * item.attributes.price;
   }, 0);
+
   return (
-    // Overlay
     <Box
       display={isCartOpen ? "block" : "none"}
       backgroundColor="rgba(0, 0, 0, 0.4)"
@@ -41,7 +41,6 @@ const CartMenu = () => {
       top="0"
       overflow="auto"
     >
-        {/* Modal */}
       <Box
         position="fixed"
         right="0"
@@ -53,7 +52,7 @@ const CartMenu = () => {
         <Box padding="30px" overflow="auto" height="100%">
           {/* HEADER */}
           <FlexBox mb="15px">
-            <Typography variant="h3">Carrito de Compras ({cart.length})</Typography>
+            <Typography variant="h3">SHOPPING BAG ({cart.length})</Typography>
             <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
               <CloseIcon />
             </IconButton>
@@ -73,7 +72,6 @@ const CartMenu = () => {
                     />
                   </Box>
                   <Box flex="1 1 60%">
-                    {/* ITEM NAME */}
                     <FlexBox mb="5px">
                       <Typography fontWeight="bold">
                         {item.attributes.name}
@@ -87,7 +85,6 @@ const CartMenu = () => {
                       </IconButton>
                     </FlexBox>
                     <Typography>{item.attributes.shortDescription}</Typography>
-                    {/* AMOUNT */}
                     <FlexBox m="15px 0">
                       <Box
                         display="flex"
@@ -110,7 +107,6 @@ const CartMenu = () => {
                           <AddIcon />
                         </IconButton>
                       </Box>
-                      {/* PRICE */}
                       <Typography fontWeight="bold">
                         ${item.attributes.price}
                       </Typography>
