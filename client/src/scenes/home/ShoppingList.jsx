@@ -8,19 +8,21 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../../state";
 
+
 const ShoppingList = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("all");
   const items = useSelector((state) => state.cart.items);
   const breakPoint = useMediaQuery("(min-width:600px)");
-
+  
+ 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   async function getItems() {
     const items = await fetch(
-      process.env.API_URL_STRAPI +"/api/items?populate=image",
+      "http://localhost:1337/api/items?populate=image",
       { method: "GET" }
     );
     const itemsJson = await items.json();
